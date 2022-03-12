@@ -1,7 +1,7 @@
 const express = require('express');
 
 const app = express();
-
+// Code pour l'erreur de connexion CORS.
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
