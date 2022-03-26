@@ -1,5 +1,3 @@
-
-
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
@@ -24,6 +22,8 @@ exports.signup = (req, res, next) => {
 
 // Etape 2 Se connecter
 exports.login = (req, res, next) => {
+
+  console.log(req.body)
   User.findOne({ email: req.body.email })
     .then(user => {
       if (!user) {
@@ -38,8 +38,8 @@ exports.login = (req, res, next) => {
             userId: user._id,
             token: 'TOKEN'
           }
-);
-})
+          );
+        })
         .catch(error => res.status(500).json({ error }));
     })
     .catch(error => res.status(500).json({ error }));
